@@ -33,11 +33,8 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/completion-nvim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'mbbill/undotree'
+Plug 'machakann/vim-highlightedyank'
 call plug#end()
-
-:lua << EOF
-  require'lspconfig'.tsserver.setup{on_attach=require'completion'.on_attach}
-EOF
 
 " If you have vim >=8.0 or Neovim >= 0.1.5
 if (has("termguicolors"))
@@ -51,6 +48,17 @@ let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
 syntax enable
 colorscheme night-owl
+
+:lua << EOF
+  require'lspconfig'.tsserver.setup{on_attach=require'completion'.on_attach}
+EOF
+
+:lua << EOF
+  require('telescope').setup{ defaults = { file_ignore_patterns = {"node_modules"} } }
+EOF
+
+
+let g:highlightedyank_highlight_duration=100
 
 let mapleader = " " 
 
