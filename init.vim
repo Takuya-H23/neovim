@@ -34,6 +34,8 @@ Plug 'nvim-lua/completion-nvim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'mbbill/undotree'
 Plug 'machakann/vim-highlightedyank'
+Plug 'sbdchd/neoformat'
+Plug 'mattn/emmet-vim'
 call plug#end()
 
 " If you have vim >=8.0 or Neovim >= 0.1.5
@@ -58,6 +60,8 @@ EOF
 
 set completeopt=menuone,noinsert,noselect 
 let g:completion_matching_strategy_list=['exact', 'substring', 'fuzzy']
+
+autocmd BufWritePre *.tsx Neoformat
 
 let g:highlightedyank_highlight_duration=100
 
