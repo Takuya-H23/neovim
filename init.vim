@@ -45,18 +45,19 @@ endif
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
 """"" enable the theme
-
 syntax enable
 colorscheme night-owl
-
-:lua << EOF
-  require'lspconfig'.tsserver.setup{on_attach=require'completion'.on_attach}
-EOF
 
 :lua << EOF
   require('telescope').setup{ defaults = { file_ignore_patterns = {"node_modules"} } }
 EOF
 
+:lua << EOF
+  require'lspconfig'.tsserver.setup{on_attach=require'completion'.on_attach}
+EOF
+
+set completeopt=menuone,noinsert,noselect 
+let g:completion_matching_strategy_list=['exact', 'substring', 'fuzzy']
 
 let g:highlightedyank_highlight_duration=100
 
