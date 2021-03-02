@@ -6,7 +6,7 @@ set expandtab
 set smartindent
 set relativenumber
 set nu
-" set nohlsearch
+set nohlsearch
 set noerrorbells
 set smartindent
 set smartcase
@@ -62,6 +62,13 @@ set completeopt=menuone,noinsert,noselect
 let g:completion_matching_strategy_list=['exact', 'substring', 'fuzzy']
 
 autocmd BufWritePre * Neoformat
+
+let g:user_emmet_leader_key='<Tab>'
+let g:user_emmet_settings = {
+  \  'typescript.jsx' : {
+    \      'extends' : 'jsx',
+    \  },
+  \}
 
 let g:highlightedyank_highlight_duration=100
 
