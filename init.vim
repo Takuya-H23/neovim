@@ -36,6 +36,7 @@ Plug 'mbbill/undotree'
 Plug 'machakann/vim-highlightedyank'
 Plug 'sbdchd/neoformat'
 Plug 'mattn/emmet-vim'
+Plug 'tpope/vim-commentary'
 call plug#end()
 
 " If you have vim >=8.0 or Neovim >= 0.1.5
@@ -71,6 +72,22 @@ let g:user_emmet_settings = {
   \}
 
 let g:highlightedyank_highlight_duration=100
+
+" Disable parentheses matching depends on system. This way we should address all cases (?)
+set noshowmatch
+" NoMatchParen " This doesnt work as it belongs to a plugin, which is only loaded _after_ all files are.
+" Trying disable MatchParen after loading all plugins
+"
+function! g:FckThatMatchParen ()
+    if exists(":NoMatchParen")
+        :NoMatchParen
+    endif
+endfunction
+
+augroup plugin_initialize
+    autocmd!
+    autocmd VimEnter * call FckThatMatchParen()
+augroup END
 
 let mapleader = " " 
 
