@@ -93,6 +93,7 @@ let mapleader = " "
 
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>gs <cmd>G<cr>
 nnoremap gd <cmd>lua vim.lsp.buf.definition()<cr> 
 nnoremap gh <cmd>lua vim.lsp.buf.hover()<cr> 
