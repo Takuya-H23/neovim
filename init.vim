@@ -1,7 +1,5 @@
 syntax on
 
-set spelllang=en
-set spell
 set tabstop=2 softtabstop=2
 set shiftwidth=2
 set expandtab
