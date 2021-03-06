@@ -1,5 +1,7 @@
 syntax on
 
+set spelllang=en
+set spell
 set tabstop=2 softtabstop=2
 set shiftwidth=2
 set expandtab
@@ -37,6 +39,7 @@ Plug 'machakann/vim-highlightedyank'
 Plug 'sbdchd/neoformat'
 Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
 call plug#end()
 
 " If you have vim >=8.0 or Neovim >= 0.1.5
