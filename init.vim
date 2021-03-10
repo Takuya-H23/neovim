@@ -1,5 +1,6 @@
 syntax on
-
+set spelllang=en
+set nospell
 set tabstop=2 softtabstop=2
 set shiftwidth=2
 set expandtab
@@ -37,6 +38,9 @@ Plug 'sbdchd/neoformat'
 Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+"spell checker
+Plug 'kamykn/spelunker.vim'
 call plug#end()
 
 " If you have vim >=8.0 or Neovim >= 0.1.5
@@ -60,7 +64,18 @@ EOF
 EOF
 
 :lua << EOF
-require'lspconfig'.graphql.setup{}
+  require'lspconfig'.graphql.setup{}
+EOF
+
+"enable treesitter 
+:lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = "maintained",
+  highlight = {
+    enable = true,             
+    disable = { "c", "rust" },
+  },
+}
 EOF
 
 set completeopt=menuone,noinsert,noselect 
