@@ -7,7 +7,7 @@ set expandtab
 set smartindent
 set relativenumber
 set nu
-set nohlsearch
+"set nohlsearch
 set noerrorbells
 set smartindent
 set smartcase
