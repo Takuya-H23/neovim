@@ -59,6 +59,10 @@ EOF
   require'lspconfig'.tsserver.setup{on_attach=require'completion'.on_attach}
 EOF
 
+:lua << EOF
+require'lspconfig'.graphql.setup{}
+EOF
+
 set completeopt=menuone,noinsert,noselect 
 let g:completion_matching_strategy_list=['exact', 'substring', 'fuzzy']
 
@@ -91,6 +95,8 @@ augroup END
 
 let mapleader = " " 
 
+nnoremap <leader>vx :Vex<cr> 
+nnoremap <leader>sx :Sex<cr> 
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
@@ -98,3 +104,5 @@ nnoremap <leader>gs <cmd>G<cr>
 nnoremap gd <cmd>lua vim.lsp.buf.definition()<cr> 
 nnoremap gh <cmd>lua vim.lsp.buf.hover()<cr> 
 nnoremap <F5> :UndotreeToggle<CR>
+" easy replace
+vnoremap <leader>p "_dp
