@@ -7,7 +7,7 @@ set expandtab
 set smartindent
 set relativenumber
 set nu
-"set nohlsearch
+set nohlsearch
 set noerrorbells
 set smartindent
 set smartcase
@@ -110,8 +110,7 @@ augroup END
 
 let mapleader = " " 
 
-nnoremap <leader>vx :Vex<cr> 
-nnoremap <leader>sx :Sex<cr> 
+nnoremap <leader>ex :Ex<cr> 
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
