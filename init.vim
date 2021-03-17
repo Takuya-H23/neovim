@@ -56,7 +56,7 @@ syntax enable
 colorscheme night-owl
 
 :lua << EOF
-  require('telescope').setup{ defaults = { file_ignore_patterns = {"node_modules"} } }
+  require('telescope').setup{ defaults = { file_ignore_patterns = {"node_modules, *.lock, /public"} } }
 EOF
 
 :lua << EOF
@@ -112,6 +112,7 @@ let mapleader = " "
 
 nnoremap <leader>ex :Ex<cr> 
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <C-p> <cmd>Telescope git_files<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>gs <cmd>G<cr>
@@ -120,3 +121,4 @@ nnoremap gh <cmd>lua vim.lsp.buf.hover()<cr>
 nnoremap <F5> :UndotreeToggle<CR>
 " easy replace
 vnoremap <leader>p "_dp
+
